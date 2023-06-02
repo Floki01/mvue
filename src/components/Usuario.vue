@@ -9,7 +9,7 @@
       <p>{{ user.bio }}</p>
     </div>
 
-    <h3>Reseñas realizadas ({{ reviews.length }})</h3>
+    <h3>Reseñas creadas por {{ user.name }} ({{ reviews.length }})</h3>
 
     <div v-for="review in reviews" :key="review._id" class="review">
       <img :src="review.product.images[0]" alt="Imagen del producto">
@@ -38,7 +38,8 @@ export default {
   methods: {
     fetchReviews() {
       axios
-        .get('http://ec2-54-163-208-73.compute-1.amazonaws.com:8080/users/reviews')
+
+        .get('http://ec2-54-163-208-73.compute-1.amazonaws.com:8080/users/647178286edc199bff73e81f/reviews')
         .then(response => {
           this.user = response.data.user;
           this.reviews = response.data.reviews;

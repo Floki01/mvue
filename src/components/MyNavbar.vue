@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-light">
   <div class="container justify-content-center">
-    <a class="navbar-brand" href="/">Schrute farm</a>
+    <a class="navbar-brand" href="/"></a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <h1>Shopi</h1>
     </div>
