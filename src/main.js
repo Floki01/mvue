@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
+
+
 //Importar las funciones createRouter y createWebHistory de vue-router
 import { createRouter, createWebHistory } from 'vue-router'
 

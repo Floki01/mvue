@@ -1,46 +1,35 @@
 <template>
-    <div>
-      //<h1></h1>
+  <div>
+    <h2>Listado de productos</h2>
+    <ul>
+      <li v-for="product in products" :key="product.id">
+        <product-item :product="product" />
+      </li>
+    </ul>
+  </div>
+</template>
 
-      <!--lista de prodcutos Api-->
-      <ul>
-        <!-- Iteración sobre el array birds listado de nombres-->
-        <li v-for="products in products" :key="products.id">{{ products }}</li>
-      </ul>
-    </div>
-  </template>
-  
 <script>
-  export default {
+import axios from 'axios';
+import ProductItem from './ListaProducto.vue';
 
-    name: 'ListaProductos', 
-    data() {
-      return {
-        
-        products: []
-      }
-    },
-    mounted() {
-      this.fetchBirds()
-    },
-    
-    methods: {
-      // Metodo para obtener los pajaros mediante una solicitud HTTP
-      fetchBirds() {
-        fetch('http://ec2-54-163-208-73.compute-1.amazonaws.com:8080')
-          .then(response => response.json())
-          .then(data => {
-            // Asignar los datos de los pajaros al array 'birds'
-            this.products= data
-          })
-          .catch(error => {
-            console.error('Error:', error)
-          })
-      }
-    }
-  }
-  </script>
- <style>
- 
- </style>
-  
+export default {
+  components: {
+    ProductItem,
+  },
+  data() {
+    return {
+      products: [],
+    };
+  },
+  mounted() {
+    axios.get('http://ec2-54-163-208-73.compute-1.amazonaws.com:8080/api/products')
+      .then(response => {
+        this.products = response.data;
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },
+};
+</script>

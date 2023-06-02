@@ -1,23 +1,17 @@
-//Importar las funciones createRouter y createWebHistory de vue-router
-import { createRouter, createWebHistory } from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
+import ProductListView from './component/ProductList.vue';
 
+Vue.use(Router);
 
-import Producto from '@/Producto.vue'
-//Definir las rutas 
-const routes = [
-  {
-    path: '/',
-   
-    name: 'Home',
-  
-    component: Producto
-  }
-]
+const router = new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'ProductosLista',
+      component: ProductListView,
+    },
+  ],
+});
 
-//Crear una instancia del enrutador
-const router = createRouter({
-  //Configurar el historial basado en la API
-  history: createWebHistory(),routes
-})
-
-export default router
+export default router;
