@@ -1,6 +1,7 @@
 <template>
-
+    <h1>data</h1>
     <h1>{{ data }}</h1>
+    
 </template>
 
 <script>
@@ -11,10 +12,13 @@ export default {
       data: [],
     };
   },
+  mounted(){
+    this.fetchData();
+  },
   methods: {
     fetchData() {
       axios
-        .get("http://ec2-54-163-208-73.compute-1.amazonaws.com:8080")
+        .get('http://54.163.208.73:8080/products')
         .then((response) => {
           this.data = response.data;
         })

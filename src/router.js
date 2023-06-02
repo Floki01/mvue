@@ -3,8 +3,8 @@ import ProductoView from "@/view/ProductoView.vue";
 
 const routes = [
     {
-        path: "/producto",
-        name: "producto",
+        path: "/listar",
+        name: "listar",
         component: ProductoView
     },
 ]
