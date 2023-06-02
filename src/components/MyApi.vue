@@ -1,6 +1,14 @@
 <template>
-    <h1>data</h1>
-    <h1>{{ data }}</h1>
+
+    <ul v-for="(item,index) in data" :key="index">
+        <li>{{ item.name }}</li>
+        <li>{{ item.description }}</li>
+        <li>${{ item.price }}</li>
+        <li>{{ item.user.city }}</li>
+        <li><img :src="item.images"></li>
+        <router-link :to="`/listar/${item._id}/reviews`">Ver Reviews</router-link>
+        <p>------------------------------</p>
+    </ul>
     
 </template>
 
