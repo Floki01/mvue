@@ -1,12 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-
-
 //Importar las funciones createRouter y createWebHistory de vue-router
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Producto from './components/ListaProducto.vue'
+import Usuario from './components/Usuario.vue'
 
 //Crear una instancia del enrutador
 const router = createRouter({
@@ -18,7 +16,7 @@ const router = createRouter({
    
       name: 'Home',
       
-      component: Producto
+      component: Usuario
     }
   ]
 })

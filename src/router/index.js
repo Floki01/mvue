@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import ProductListView from './component/ProductList.vue';
+import UsuarioView from './pages/UserPage.vue';
 
 Vue.use(Router);
 
@@ -8,8 +8,8 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'ProductosLista',
-      component: ProductListView,
+      name: 'UsuarioView',
+      component: UsuarioView,
     },
   ],
 });
