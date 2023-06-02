@@ -1,24 +1,12 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from "./view/HomeView.vue"
-import NosotrosView from "./view/NosotrosView.vue"
-import AgregarProductosView from "./view/AgregarProductosView.vue"
+import { createRouter, createWebHistory } from 'vue-router';
+import ProductoView from "@/view/ProductoView.vue";
 
 const routes = [
     {
-        path: "/",
-        name: "home",
-        component: HomeView
+        path: "/producto",
+        name: "producto",
+        component: ProductoView
     },
-    {
-        path: "/nosotros",
-        name: "nosotros",
-        component: NosotrosView
-    },
-    {
-        path: "/productos",
-        name: "productos",
-        component: AgregarProductosView
-    }
 ]
 
 const router = createRouter({

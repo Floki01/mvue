@@ -1,15 +1,14 @@
 <template>
-  <MyNavbar></MyNavbar>
-  <router-view />
+  <MyApi></MyApi>
 </template>
 
 <script>
-import MyNavbar from './components/MyNavbar.vue';
+  import MyApi from './components/MyApi.vue';
 
 export default {
   name: 'App',
   components: {
-    MyNavbar
+    MyApi
   }
 }
 </script>
