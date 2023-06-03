@@ -68,11 +68,13 @@ h3 {
   text-align: center;
   margin-bottom: 20px;
   margin-top: 20px;
+
 }
 
 .user-avatar-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 15px;
 }
 
 .user-avatar {

@@ -30,9 +30,9 @@
   margin: 10px;
   padding: 20px;
   text-align: center;
-  border: 1px solid #ccc;
+  border: 1px solid #e2e0e0;
   border-radius: 5px;
-  background-color: #f2f2f2; 
+  background-color: #e9e8e8; 
   box-sizing: border-box;
 }
 
