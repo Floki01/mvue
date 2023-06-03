@@ -1,9 +1,12 @@
 <template>
   <div>
-    <h2>Perfil del usuario</h2>
-
+    <my-navbar></my-navbar>
     <div class="user-profile">
-      <img :src="user.photo" alt="Imagen de usuario">
+      <div class="user-avatar-container">
+        <div class="user-avatar">
+          <img :src="user.photo" alt="Imagen de usuario">
+        </div>
+      </div>
       <h3>{{ user.name }}</h3>
       <p>{{ user.city }}</p>
       <p>{{ user.bio }}</p>
@@ -11,19 +14,23 @@
 
     <h3>Reseñas creadas por {{ user.name }} ({{ reviews.length }})</h3>
 
-    <div v-for="review in reviews" :key="review._id" class="review">
-      <img :src="review.product.images[0]" alt="Imagen del producto">
-      <h4>{{ review.product.name }}</h4>
-      <p>{{ review.review }}</p>
+    <div class="review-cards">
+      <review-card v-for="review in reviews" :key="review._id" :review="review"></review-card>
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import MyNavbar from "@/components/MyNavbar.vue";
+import ReviewCard from "@/components/ReviewCard.vue";
 
 export default {
   name: 'UsuarioProfile',
+  components: {
+    MyNavbar,
+    ReviewCard
+  },
   data() {
     return {
       user: {},
@@ -53,23 +60,38 @@ export default {
 </script>
 
 <style scoped>
-h2 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
 h3 {
-  margin-bottom: 20px;
   text-align: center;
 }
 
 .user-profile {
-  margin-bottom: 20px;
   text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-.review {
-  margin-bottom: 10px;
-  text-align: center;
+.user-avatar-container {
+  display: flex;
+  justify-content: center;
 }
+
+.user-avatar {
+  width: 150px; 
+  height: 150px; 
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.review-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 </style>
