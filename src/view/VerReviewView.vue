@@ -1,13 +1,14 @@
 <template>
-  <!-- <h1>{{$router.params.id }}</h1> -->
-  <h1>{{ $route.params.id }}</h1>
-  <h1>
-    {{ "http://54.163.208.73:8080/products/" + $route.params.id + "/reviews" }}
-  </h1>
-  <ul v-for="(item,index) in data" :key="index">
-        <li>{{ item.reviews.user }}</li>
-        <p>------------------------------</p>
-    </ul>
+  <p>{{ $route.params.id }}</p>
+
+  <h1>{{ product }}</h1>
+
+  <ul v-for="(a,i) in reviews" :key="i">
+    <li><img :src="a.user.photo"></li>
+    <li>{{ a.user.name }}</li>
+    <li>{{ a.review }}</li>
+  </ul>
+
 </template>
   
   <script>
@@ -15,24 +16,25 @@ import axios from "axios";
 export default {
   data() {
     return {
-      data: [],
-      id: ""
+      reviews: [],
+      product: null,
     };
   },
   mounted() {
     this.fetchData();
   },
-  created() {
-    
-  },
   methods: {
     fetchData() {
       axios
         .get(
-          "http://54.163.208.73:8080/products/" + this.$route.params.id + "/reviews"
+          "http://54.163.208.73:8080/products/" +
+            this.$route.params.id +
+            "/reviews"
         )
         .then((response) => {
-          this.data = response.data;
+          this.reviews = response.data.reviews;
+          this.product = response.data.product;
+
         })
         .catch((error) => {
           console.error(error);
