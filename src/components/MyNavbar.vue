@@ -1,27 +1,26 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-light">
-  <div class="container justify-content-center">
-    <a class="navbar-brand" href="/"></a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <h1>Shopi</h1>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container justify-content-center">
+      <a class="navbar-brand" href="/">Shopi</a>
     </div>
-  </div>
-</nav>
+  </nav>
 </template>
 
 <script>
 export default {
-    
+
 }
 </script>
 
-<style>
-#navbarNav{
-background-color: blue ;
-}
-h1{
-  margin-bottom: 20px;
-  text-align: center;
+<style scoped>
+.navbar {
+  background-color: blue;
 }
 
+.navbar-brand {
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
 </style>
