@@ -1,30 +1,26 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-light">
-  <div class="container justify-content-center">
-    <a class="navbar-brand" href="/">Schrute farm</a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Productos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="/nosotros">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="/productos">Productos</a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container justify-content-center">
+      <a class="navbar-brand" href="/">Shopi</a>
     </div>
-  </div>
-</nav>
+  </nav>
 </template>
 
 <script>
 export default {
-    
+
 }
 </script>
 
-<style>
+<style scoped>
+.navbar {
+  background-color: blue;
+}
 
+.navbar-brand {
+  margin-bottom: 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
 </style>

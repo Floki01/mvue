@@ -1,3 +1,5 @@
+Integrantes: Matias Arias y Claudio Sáez.
+
 # mvue
 
 ## Project setup
