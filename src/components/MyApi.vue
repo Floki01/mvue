@@ -6,6 +6,7 @@
         <li>${{ item.price }}</li>
         <li>{{ item.user.city }}</li>
         <li><img :src="item.images[0]"></li>
+        
         <router-link :to="`/listar/${item._id}/reviews`">Ver Reviews</router-link>
         <p>------------------------------</p>
     </ul>

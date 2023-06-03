@@ -1,23 +1,24 @@
 <template>
-  <p>{{ $route.params.id }}</p>
+  
 
-  <h1>{{ product }}</h1>
-
-  <ul v-for="(a,i) in reviews" :key="i">
-    <li><img :src="a.user.photo"></li>
-    <li>{{ a.user.name }}</li>
-    <li>{{ a.review }}</li>
-  </ul>
-
+  <ProductComp :product="this.product"></ProductComp>
+  <ReseñaComp :reviews="this.reviews"></ReseñaComp>
 </template>
   
   <script>
 import axios from "axios";
+import ReseñaComp from '@/components/ReseñaComp.vue';
+import ProductComp from "@/components/ProductComp.vue";
+
 export default {
+  components:{
+    ReseñaComp,
+    ProductComp
+  },
   data() {
     return {
       reviews: [],
-      product: null,
+      product: [],
     };
   },
   mounted() {
@@ -34,7 +35,6 @@ export default {
         .then((response) => {
           this.reviews = response.data.reviews;
           this.product = response.data.product;
-
         })
         .catch((error) => {
           console.error(error);
