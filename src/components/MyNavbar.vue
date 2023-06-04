@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg">
     <div class="container justify-content-center">
-      <a class="navbar-brand" href="/">Shopi</a>
+      <a class="navbar-brand" href="/listar">Shopi</a>
     </div>
   </nav>
 </template>

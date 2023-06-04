@@ -22,13 +22,11 @@
 
 <script>
 import axios from 'axios';
-import MyNavbar from "@/components/MyNavbar.vue";
 import ReviewCard from "@/components/ReviewCard.vue";
 
 export default {
   name: 'UsuarioProfile',
   components: {
-    MyNavbar,
     ReviewCard
   },
   data() {
